@@ -1,0 +1,31 @@
+[Unit]
+Description=International Impulse Clock Controller (A/B/C) with Web UI
+After=network-online.target time-sync.target
+Wants=network-online.target time-sync.target
+
+[Service]
+Type=simple
+
+# Run as a dedicated service user if desired
+# (or remove User= to run as root)
+User=international-clock
+
+# Directory where the repo is installed
+# Change this to match your install location
+WorkingDirectory=/opt/international-impulse-clock
+
+# Python environment
+Environment=PYTHONUNBUFFERED=1
+
+# Start the daemon
+ExecStart=/usr/bin/python3 international_clock_daemon_web.py
+
+Restart=on-failure
+RestartSec=5
+
+# Clean shutdown
+KillSignal=SIGTERM
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
