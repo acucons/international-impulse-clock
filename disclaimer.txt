@@ -1,0 +1,5 @@
+FYI, I am not a coder and I used ChatGPT to create this code based on my
+requirements, and a very helpful Youtube video by J. Alan Bloore.
+
+If you need help on the program use your favorite AI service as I dont
+have the knowledge base of the actual coding work.
